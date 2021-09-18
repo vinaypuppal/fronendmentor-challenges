@@ -118,4 +118,4 @@ dist
 .pnp.*
 
 # osx
-.DX_Store
+.DS_Store

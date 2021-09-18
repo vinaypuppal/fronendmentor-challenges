@@ -1,0 +1,158 @@
+:root {
+  --neutral-dark-gray: hsl(0, 0%, 59%);
+  --primary-dark-cyan: hsl(185, 75%, 39%);
+  --primary-dark-desaturated-blue: hsl(229, 23%, 23%);
+  --primary-dark-grayish-blue: hsl(227, 10%, 46%);
+  --font-base: 18px;
+  font-size: var(--font-base);
+}
+
+html {
+  font-family: "Kumbh Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--primary-pale-blue);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--primary-dark-cyan);
+  color: #fff;
+  background-image: url(./images/bg-pattern-top.svg),
+    url(./images/bg-pattern-bottom.svg);
+  background-repeat: no-repeat;
+  background-position: right 45vw bottom 45vh, 45vw 45vh;
+}
+
+main {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.card {
+  max-width: 375px;
+  background: #fff;
+  color: var(--neutral-dark-gray);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.card .image img {
+  width: 100%;
+}
+
+.card .details {
+  position: relative;
+  padding-top: 50px;
+}
+
+.card .name {
+  padding: 16px;
+  text-align: center;
+}
+
+.card .name h1 {
+  color: var(--primary-dark-desaturated-blue);
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.card .name p {
+  color: var(--primary-dark-grayish-blue);
+  font-weight: 400;
+  font-size: 0.8rem;
+  margin: 8px 0;
+}
+
+.card .name h1 span {
+  color: var(--neutral-dark-gray);
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.card .stats {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  padding: 20px;
+  border-top: 1px solid hsl(0, 0%, 94%);
+}
+
+.card .stats li {
+  flex: 1;
+  text-align: center;
+}
+
+li .count {
+  font-weight: 700;
+  color: var(--primary-dark-desaturated-blue);
+}
+
+li .label {
+  font-weight: 400;
+  font-size: 0.6rem;
+  margin-top: 4px;
+  color: var(--neutral-dark-gray);
+}
+
+.card .avatar {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: -55px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.card .avatar img {
+  width: 100%;
+  border-radius: 100%;
+  border: 5px solid #fff;
+}
+
+.attribution {
+  font-size: 0.7rem;
+  text-align: center;
+  margin-top: 32px;
+}
+
+a {
+  color: #fff;
+}
+
+a:hover {
+  text-decoration: none;
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  main {
+    background-image: url(./images/pattern-background-mobile.svg);
+  }
+}
+
+@media (max-width: 400px) {
+  :root {
+    --font-base: 14px;
+  }
+}
+
+@media (max-width: 300px) {
+  .card .image img {
+    height: 120px;
+  }
+}
