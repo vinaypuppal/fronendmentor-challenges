@@ -20,7 +20,7 @@ const classNameMap = {
     },
     [ids.shareBtn]: {
       active: ["bg-gray-500", "text-white"],
-      default: ["bg-blue-100", "text-gray-600"],
+      default: ["bg-[#eff2f7]", "text-gray-600"],
     },
     [ids.shareView]: {
       active: ["flex"],
@@ -34,7 +34,7 @@ const classNameMap = {
   [screenType.desktop]: {
     [ids.shareBtn]: {
       active: ["bg-gray-500", "text-white"],
-      default: ["bg-blue-100", "text-gray-600"],
+      default: ["bg-[#eff2f7]", "text-gray-600"],
     },
     [ids.shareView]: {
       active: [
