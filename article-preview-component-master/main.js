@@ -1,5 +1,6 @@
 import "./styles.css";
 
+const mobileBreakpoint = "(min-width: 640px)";
 const ids = {
   shareContainer: "share-container",
   shareBtn: "share-btn",
@@ -55,13 +56,13 @@ const classNameMap = {
  *
  * @param {HTMLElement} el
  * @param {string} id
- * @param {null | "active"} state
+ * @param {boolean} isActive
  * @param {"mobile" | "desktop"} screen
  */
-function toogleClassNames(el, id, state, screen) {
+function toogleClassNames(el, id, isActive, screen) {
   const classNames = classNameMap[screen][id];
-  const classToRemove = state ? classNames.active : classNames.default;
-  const classToAdd = state ? classNames.default : classNames.active;
+  const classToRemove = isActive ? classNames.active : classNames.default;
+  const classToAdd = isActive ? classNames.default : classNames.active;
   el.classList.remove(...classToRemove);
   el.classList.add(...classToAdd);
 }
@@ -71,15 +72,20 @@ function rendenShareOptions({
   shareView,
   shareContainer,
   avatarView,
-  shareBtnState,
+  isShareBtnActive,
   isDesktop,
 }) {
   const screen = isDesktop ? screenType.desktop : screenType.mobile;
-  toogleClassNames(shareBtn, ids.shareBtn, shareBtnState, screen);
-  toogleClassNames(shareView, ids.shareView, shareBtnState, screen);
+  toogleClassNames(shareBtn, ids.shareBtn, isShareBtnActive, screen);
+  toogleClassNames(shareView, ids.shareView, isShareBtnActive, screen);
   if (!isDesktop) {
-    toogleClassNames(shareContainer, ids.shareContainer, shareBtnState, screen);
-    toogleClassNames(avatarView, ids.avatarView, shareBtnState, screen);
+    toogleClassNames(
+      shareContainer,
+      ids.shareContainer,
+      isShareBtnActive,
+      screen
+    );
+    toogleClassNames(avatarView, ids.avatarView, isShareBtnActive, screen);
   }
 }
 
@@ -88,33 +94,35 @@ window.addEventListener("DOMContentLoaded", () => {
   const shareBtn = document.getElementById(ids.shareBtn);
   const shareView = document.getElementById(ids.shareView);
   const avatarView = document.getElementById(ids.avatarView);
-  let shareBtnState = null;
+  let isShareBtnActive = false;
+
   shareBtn.addEventListener("click", (e) => {
-    const { matches: isDesktop } = window.matchMedia("(min-width: 640px)");
+    const { matches: isDesktop } = window.matchMedia(mobileBreakpoint);
     rendenShareOptions({
       shareBtn,
       shareView,
       shareContainer,
       avatarView,
-      shareBtnState,
+      isShareBtnActive,
       isDesktop,
     });
-    shareBtnState = shareBtnState ? null : "active";
+    isShareBtnActive = !isShareBtnActive;
   });
+
   window
-    .matchMedia("(min-width: 640px)")
+    .matchMedia(mobileBreakpoint)
     .addEventListener("change", ({ matches: isDesktop }) => {
-      if (!shareBtnState) {
+      if (!isShareBtnActive) {
         return;
       }
       // reset previous screen UI
-      if (shareBtnState) {
+      if (isShareBtnActive) {
         rendenShareOptions({
           shareBtn,
           shareView,
           shareContainer,
           avatarView,
-          shareBtnState,
+          isShareBtnActive,
           isDesktop: !isDesktop,
         });
       }
@@ -124,7 +132,7 @@ window.addEventListener("DOMContentLoaded", () => {
         shareView,
         shareContainer,
         avatarView,
-        shareBtnState: null,
+        isShareBtnActive: false,
         isDesktop,
       });
     });
