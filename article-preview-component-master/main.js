@@ -66,6 +66,23 @@ function toogleClassNames(el, id, state, screen) {
   el.classList.add(...classToAdd);
 }
 
+function rendenShareOptions({
+  shareBtn,
+  shareView,
+  shareContainer,
+  avatarView,
+  shareBtnState,
+  isDesktop,
+}) {
+  const screen = isDesktop ? screenType.desktop : screenType.mobile;
+  toogleClassNames(shareBtn, ids.shareBtn, shareBtnState, screen);
+  toogleClassNames(shareView, ids.shareView, shareBtnState, screen);
+  if (!isDesktop) {
+    toogleClassNames(shareContainer, ids.shareContainer, shareBtnState, screen);
+    toogleClassNames(avatarView, ids.avatarView, shareBtnState, screen);
+  }
+}
+
 window.addEventListener("DOMContentLoaded", () => {
   const shareContainer = document.getElementById(ids.shareContainer);
   const shareBtn = document.getElementById(ids.shareBtn);
@@ -74,18 +91,41 @@ window.addEventListener("DOMContentLoaded", () => {
   let shareBtnState = null;
   shareBtn.addEventListener("click", (e) => {
     const { matches: isDesktop } = window.matchMedia("(min-width: 640px)");
-    const screen = isDesktop ? screenType.desktop : screenType.mobile;
-    toogleClassNames(shareBtn, ids.shareBtn, shareBtnState, screen);
-    toogleClassNames(shareView, ids.shareView, shareBtnState, screen);
-    if (!isDesktop) {
-      toogleClassNames(
-        shareContainer,
-        ids.shareContainer,
-        shareBtnState,
-        screen
-      );
-      toogleClassNames(avatarView, ids.avatarView, shareBtnState, screen);
-    }
+    rendenShareOptions({
+      shareBtn,
+      shareView,
+      shareContainer,
+      avatarView,
+      shareBtnState,
+      isDesktop,
+    });
     shareBtnState = shareBtnState ? null : "active";
   });
+  window
+    .matchMedia("(min-width: 640px)")
+    .addEventListener("change", ({ matches: isDesktop }) => {
+      if (!shareBtnState) {
+        return;
+      }
+      // reset previous screen UI
+      if (shareBtnState) {
+        rendenShareOptions({
+          shareBtn,
+          shareView,
+          shareContainer,
+          avatarView,
+          shareBtnState,
+          isDesktop: !isDesktop,
+        });
+      }
+      // show current screen UI
+      rendenShareOptions({
+        shareBtn,
+        shareView,
+        shareContainer,
+        avatarView,
+        shareBtnState: null,
+        isDesktop,
+      });
+    });
 });
