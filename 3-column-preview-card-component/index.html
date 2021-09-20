@@ -20,152 +20,160 @@
 
     <title>Frontend Mentor | 3-column preview card component</title>
   </head>
-  <body
-    class="
-      w-full
-      min-h-screen
-      bg-light-gray
-      flex flex-col
-      justify-center
-      items-center
-      p-4
-      sm:px-8
-      font-LexendDeca font-normal
-    "
-  >
+  <body class="bg-light-gray">
     <main
       class="
-        max-w-3xl
-        mx-auto
-        rounded-lg
-        sm:flex
-        overflow-hidden
-        shadow-xl
-        bg-white
+        w-full
+        min-h-screen
+        flex flex-col
+        justify-center
+        items-center
+        p-4
+        sm:px-8
+        font-LexendDeca font-normal
       "
     >
-      <div class="p-6 sm:p-8 flex flex-col justify-between bg-bright-orange">
-        <div class="mb-6 sm:mb-20">
-          <div class="mb-6">
-            <img src="./images/icon-sedans.svg" alt="sedan" />
+      <div
+        class="
+          max-w-3xl
+          mx-auto
+          rounded-lg
+          sm:flex
+          overflow-hidden
+          shadow-xl
+          bg-white
+        "
+      >
+        <div class="p-6 sm:p-8 flex flex-col justify-between bg-bright-orange">
+          <div class="mb-6 sm:mb-20">
+            <div class="mb-6">
+              <img src="./images/icon-sedans.svg" alt="sedan" />
+            </div>
+            <h1
+              class="
+                tracking-wider
+                mb-6
+                font-bigShoulders
+                text-3xl
+                uppercase
+                text-light-gray
+              "
+            >
+              Sedans
+            </h1>
+            <p
+              class="
+                text-sm
+                tracking-wide
+                leading-relaxed
+                text-transparent-white
+                max-w-xs
+                sm:w-auto
+              "
+            >
+              Choose a sedan for its affordability and excellent fuel economy.
+              Ideal for cruising in the city or on your next road trip.
+            </p>
           </div>
-          <h1
-            class="
-              tracking-wider
-              mb-6
-              font-bigShoulders
-              text-3xl
-              uppercase
-              text-light-gray
-            "
+          <button
+            class="px-2 py-3 w-44 rounded-full text-bright-orange bg-light-gray"
           >
-            Sedans
-          </h1>
-          <p
-            class="
-              text-sm
-              tracking-wide
-              leading-relaxed
-              text-transparent-white
-              max-w-xs
-              sm:w-auto
-            "
-          >
-            Choose a sedan for its affordability and excellent fuel economy.
-            Ideal for cruising in the city or on your next road trip.
-          </p>
+            Learn More
+          </button>
         </div>
-        <button
-          class="px-2 py-3 w-44 rounded-full text-bright-orange bg-light-gray"
-        >
-          Learn More
-        </button>
-      </div>
-      <div class="p-6 sm:p-8 flex flex-col justify-between bg-dark-cyan">
-        <div class="mb-6 sm:mb-20">
-          <div class="mb-6">
-            <img src="./images/icon-suvs.svg" alt="suv" />
+        <div class="p-6 sm:p-8 flex flex-col justify-between bg-dark-cyan">
+          <div class="mb-6 sm:mb-20">
+            <div class="mb-6">
+              <img src="./images/icon-suvs.svg" alt="suv" />
+            </div>
+            <h1
+              class="
+                tracking-wider
+                mb-6
+                font-bigShoulders
+                text-3xl
+                uppercase
+                text-light-gray
+              "
+            >
+              SUVs
+            </h1>
+            <p
+              class="
+                text-sm
+                tracking-wide
+                leading-relaxed
+                text-transparent-white
+                max-w-xs
+                sm:w-auto
+              "
+            >
+              Take an SUV for its spacious interior, power, and versatility.
+              Perfect for your next family vacation and off-road adventures.
+            </p>
           </div>
-          <h1
-            class="
-              tracking-wider
-              mb-6
-              font-bigShoulders
-              text-3xl
-              uppercase
-              text-light-gray
-            "
+          <button
+            class="px-2 py-3 w-44 rounded-full text-dark-cyan bg-light-gray"
           >
-            SUVs
-          </h1>
-          <p
-            class="
-              text-sm
-              tracking-wide
-              leading-relaxed
-              text-transparent-white
-              max-w-xs
-              sm:w-auto
-            "
-          >
-            Take an SUV for its spacious interior, power, and versatility.
-            Perfect for your next family vacation and off-road adventures.
-          </p>
+            Learn More
+          </button>
         </div>
-        <button
-          class="px-2 py-3 w-44 rounded-full text-dark-cyan bg-light-gray"
-        >
-          Learn More
-        </button>
-      </div>
-      <div class="p-6 sm:p-8 flex flex-col justify-between bg-very-dark-cyan">
-        <div class="mb-6 sm:mb-20">
-          <div class="mb-6">
-            <img src="./images/icon-luxury.svg" alt="luxury" />
+        <div class="p-6 sm:p-8 flex flex-col justify-between bg-very-dark-cyan">
+          <div class="mb-6 sm:mb-20">
+            <div class="mb-6">
+              <img src="./images/icon-luxury.svg" alt="luxury" />
+            </div>
+            <h1
+              class="
+                tracking-wider
+                mb-6
+                font-bigShoulders
+                text-3xl
+                uppercase
+                text-light-gray
+              "
+            >
+              Luxury
+            </h1>
+            <p
+              class="
+                text-sm
+                tracking-wide
+                leading-relaxed
+                text-transparent-white
+                max-w-xs
+                sm:w-auto
+              "
+            >
+              Cruise in the best car brands without the bloated prices. Enjoy
+              the enhanced comfort of a luxury rental and arrive in style.
+            </p>
           </div>
-          <h1
+          <button
             class="
-              tracking-wider
-              mb-6
-              font-bigShoulders
-              text-3xl
-              uppercase
-              text-light-gray
+              px-0
+              py-3
+              w-44
+              rounded-full
+              text-very-dark-cyan
+              bg-light-gray
             "
           >
-            Luxury
-          </h1>
-          <p
-            class="
-              text-sm
-              tracking-wide
-              leading-relaxed
-              text-transparent-white
-              max-w-xs
-              sm:w-auto
-            "
-          >
-            Cruise in the best car brands without the bloated prices. Enjoy the
-            enhanced comfort of a luxury rental and arrive in style.
-          </p>
+            Learn More
+          </button>
         </div>
-        <button
-          class="px-0 py-3 w-44 rounded-full text-very-dark-cyan bg-light-gray"
-        >
-          Learn More
-        </button>
       </div>
+      <div class="mt-8">
+        Challenge by
+        <a
+          class="text-blue-500 hover:text-blue-600 hover:underline"
+          href="https://www.frontendmentor.io?ref=challenge"
+          target="_blank"
+          >Frontend Mentor</a
+        >. Coded by
+        <a href="https://vinaypuppal.com" target="_blank">VinayPuppal</a>.
+      </div>
+      <script type="module" src="/main.js"></script>
     </main>
-    <div class="mt-8">
-      Challenge by
-      <a
-        class="text-blue-500 hover:text-blue-600 hover:underline"
-        href="https://www.frontendmentor.io?ref=challenge"
-        target="_blank"
-        >Frontend Mentor</a
-      >. Coded by
-      <a href="https://vinaypuppal.com" target="_blank">VinayPuppal</a>.
-    </div>
-    <script type="module" src="/main.js"></script>
   </body>
 </html>
