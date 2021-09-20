@@ -1,0 +1,30 @@
+{
+  "name": "fontendmentor",
+  "version": "1.0.0",
+  "description": "Demos and links are available [here](https://www.frontendmentor.io/profile/vinaypuppal)",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinaypuppal/fronendmentor-challenges.git"
+  },
+  "keywords": [],
+  "author": "vinaypuppal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vinaypuppal/fronendmentor-challenges/issues"
+  },
+  "homepage": "https://github.com/vinaypuppal/fronendmentor-challenges#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.3.4",
+    "postcss": "^8.3.6",
+    "tailwindcss": "^2.2.15",
+    "vite": "^2.5.10",
+    "vite-plugin-mpa": "^1.1.0",
+    "vite-plugin-multipage": "^1.0.0"
+  }
+}
