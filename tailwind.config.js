@@ -8,6 +8,7 @@ module.exports = {
         manrope: ["Manrope", "sans-serif"],
         bigShoulders: ['"Big Shoulders Display"', "cursive"],
         LexendDeca: ['"Lexend Deca"', "sans-serif"],
+        inter: ["Inter", "sans-serif"],
       },
       colors: {
         "bright-orange": "hsl(31, 77%, 52%)",
