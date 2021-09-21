@@ -1,3 +1,13 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+.bg-stats-image-header {
+  background-image: url(./images/image-header-mobile.jpg);
+}
+
+@screen md {
+  .bg-stats-image-header {
+    background-image: url(./images/image-header-desktop.jpg);
+  }
+}

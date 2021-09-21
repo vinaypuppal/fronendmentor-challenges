@@ -17,11 +17,6 @@ module.exports = {
         "transparent-white": "hsla(0, 0%, 100%, 0.75)",
         "light-gray": "hsl(0, 0%, 95%)",
       },
-      backgroundImage: {
-        "stats-image-header-desktop":
-          "url('./images/image-header-desktop.jpg')",
-        "stats-image-header-mobile": "url('./images/image-header-mobile.jpg')",
-      },
     },
   },
   plugins: [],
