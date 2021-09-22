@@ -27,7 +27,6 @@
       class:border-red-500={error}
       class:ring-transparent={error}
       bind:value
-      min={0}
     />
   </div>
 </div>

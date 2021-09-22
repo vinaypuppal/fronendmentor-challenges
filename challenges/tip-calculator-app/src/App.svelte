@@ -58,9 +58,12 @@
 </script>
 
 <main class="max-w-4xl">
-  <div class="flex justify-center items-center mb-12 mt-6 md:mt-0">
+  <h1
+    aria-label="splitter"
+    class="flex justify-center items-center mb-12 mt-6 md:mt-0"
+  >
     <img src={logo} alt="splitter logo" />
-  </div>
+  </h1>
   <div class="bg-white shadow-xl p-6 py-8 rounded-xl">
     <div class="md:flex">
       <div class="flex-1 md:px-4">
@@ -97,7 +100,6 @@
                 inputmode="numeric"
                 placeholder="Custom"
                 bind:value={customPercent}
-                min={0}
                 class="py-2 px-4 text-xl rounded-md focus:ring-2 ring-calc-cyna-500 outline-none appearance-none text-calc-cyna-900 font-bold text-right bg-transparent block w-full"
               />
             </li>
