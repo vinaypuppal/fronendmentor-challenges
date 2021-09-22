@@ -60,7 +60,7 @@
 <main class="max-w-4xl">
   <h1
     aria-label="splitter"
-    class="flex justify-center items-center mb-12 mt-6 md:mt-0"
+    class="flex justify-center items-center mb-12 mt-6 md:mb-20 md:mt-0"
   >
     <img src={logo} alt="splitter logo" />
   </h1>
