@@ -9,10 +9,12 @@
   import dollarIcon from "../images/icon-dollar.svg";
   import personIcon from "../images/icon-person.svg";
 
+  const percents = [5, 10, 15, 25, 50];
+
   let amount = undefined;
   let percent = undefined;
   let customPercent = undefined;
-  let percents = [5, 10, 15, 25, 50];
+
   let tipAmountPerPerson = tweened(0, {
     duration: 400,
     easing: cubicOut,
@@ -54,6 +56,7 @@
   function onReset() {
     amount = undefined;
     percent = undefined;
+    customPercent = undefined;
   }
 </script>
 
