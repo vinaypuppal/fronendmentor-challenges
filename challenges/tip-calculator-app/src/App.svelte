@@ -1,6 +1,7 @@
 <script>
   import { tweened } from "svelte/motion";
   import { cubicOut } from "svelte/easing";
+  import clsx from "clsx";
 
   import InputGroup from "./InputGroup.svelte";
   import Label from "./Label.svelte";
@@ -91,9 +92,12 @@
               <li class=" overflow-hidden">
                 <button
                   on:click={() => handleBtnClick(percentage)}
-                  class:bg-calc-cyna-500={percent === percentage}
-                  class="text-center  w-full py-2 px-2 text-xl font-bold bg-calc-cyna-900 hover:opacity-90  text-white rounded"
-                  >{percentage}%</button
+                  class={clsx(
+                    "text-center w-full py-2 px-2 text-xl font-bold hover:opacity-90  text-white rounded",
+                    percent === percentage
+                      ? "bg-calc-cyna-500"
+                      : "bg-calc-cyna-900 "
+                  )}>{percentage}%</button
                 >
               </li>
             {/each}

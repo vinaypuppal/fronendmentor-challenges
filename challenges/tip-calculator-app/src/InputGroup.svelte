@@ -1,4 +1,6 @@
 <script>
+  import clsx from "clsx";
+
   import Label from "./Label.svelte";
   export let value;
   export let icon;
@@ -23,9 +25,12 @@
       name="bill"
       placeholder="0"
       autocomplete="off"
-      class="pl-6 border border-transparent outline-none rounded-md bg-calc-gray-cyna-50 appearance-none focus:ring-2 ring-calc-cyna-500 text-calc-cyna-900 font-bold text-right pr-4 py-2 text-2xl bg-transparent block w-full"
-      class:border-red-500={error}
-      class:ring-transparent={error}
+      class={clsx(
+        "pl-6 border border-transparent outline-none rounded-md bg-calc-gray-cyna-50 appearance-none focus:ring-2  text-calc-cyna-900 font-bold text-right pr-4 py-2 text-2xl bg-transparent block w-full",
+        error
+          ? "border-red-500 ring-transparent"
+          : " border-transparent ring-calc-cyna-500"
+      )}
       bind:value
     />
   </div>
