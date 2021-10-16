@@ -29,8 +29,24 @@ module.exports = {
           "gray-cyna-200": "hsl(186, 14%, 56%)",
           "gray-cyna-300": "hsl(186, 14%, 43%)",
         },
+        pricing: {
+          "cyan-100": "hsl(174, 77%, 80%)",
+          "cyan-200": "hsl(174, 86%, 45%)",
+          "red-100": "hsl(14, 92%, 95%)",
+          "red-200": "hsl(15, 100%, 70%)",
+          "blue-50": "hsl(230, 100%, 99%)",
+          "blue-100": "hsl(226, 100%, 87%)",
+          "blue-200": "hsl(224, 65%, 95%)",
+          "blue-300": "hsl(223, 50%, 87%)",
+          "blue-400": "hsl(225, 20%, 60%)",
+          "blue-500": "hsl(227, 35%, 25%)",
+        },
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require("@tailwindcss/forms")({
+      strategy: "class",
+    }),
+  ],
 };

@@ -1,0 +1,11 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.bg-pricing-image {
+  background-image: url(../images/bg-pattern.svg);
+}
+
+.bg-pricing-circles {
+  background-image: url(../images/pattern-circles.svg);
+}
