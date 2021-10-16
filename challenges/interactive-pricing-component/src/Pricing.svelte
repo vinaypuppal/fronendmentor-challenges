@@ -30,7 +30,7 @@
   const rangeStep = 1;
   const discount = 25;
   let payYearly = false;
-  let rangeIndex = 0;
+  let rangeIndex = 2;
 
   $: priceRange = priceRanges[rangeIndex];
   $: sliderWidth = (rangeIndex / rangeMaxIndex) * 100;

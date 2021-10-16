@@ -11,7 +11,9 @@
   >
     <div class="bg-pricing-cyan-100 h-full" style="width: {filledWidth}%" />
   </div>
+  <label for="pricing" class="sr-only" aria-label="price slider" />
   <input
+    id="pricing"
     type="range"
     class="price-range relative z-20"
     bind:value={rangeIndex}
