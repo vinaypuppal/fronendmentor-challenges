@@ -4,10 +4,10 @@
 </script>
 
 <header
-  class="bg-pricing-circles bg-no-repeat sm:h-48 sm:mb-6  h-48 bg-center flex items-center justify-center flex-col"
+  class="bg-pricing-circles bg-no-repeat sm:h-48 sm:mb-6  xs:h-48 h-40 bg-center flex items-center justify-center flex-col"
 >
   <h1
-    class="sm:text-4xl text-2xl text-center sm:mb-4 mb-2 font-semibold text-pricing-blue-500"
+    class="sm:text-4xl xs:text-2xl text-xl text-center sm:mb-4 mb-2 font-semibold text-pricing-blue-500"
   >
     Simple, traffic-based pricing
   </h1>

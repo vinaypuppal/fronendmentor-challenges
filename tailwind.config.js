@@ -42,6 +42,9 @@ module.exports = {
           "blue-500": "hsl(227, 35%, 25%)",
         },
       },
+      screens: {
+        xs: "325px",
+      },
     },
   },
   plugins: [

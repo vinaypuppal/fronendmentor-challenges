@@ -65,12 +65,12 @@
   <div
     class="flex relative items-center justify-center sm:mt-14 mt-10 sm:text-sm text-xs"
   >
-    <span class="inline-flex mr-4">Monthly Billing</span>
+    <span class="inline-flex mr-2 xs:mr-4">Monthly Billing</span>
     <Toggle id="yearly" label="pay yearly" bind:checked={payYearly} />
-    <span class="inline-flex ml-4 relative"
+    <span class="inline-flex ml-2 xs:ml-4 relative"
       >Yearly Billing
       <span
-        class=" sm:inline-flex text-[10px] sm:text-[11px] sm:absolute sm:-right-28 sm:top-0 px-1 sm:px-2 leading-none py-1 rounded-full bg-pricing-red-100 text-pricing-red-200"
+        class="-right-2 relative sm:inline-flex text-[10px] sm:text-[11px] sm:absolute sm:-right-28 sm:top-0 px-1 sm:px-2 leading-none py-1 rounded-full bg-pricing-red-100 text-pricing-red-200"
       >
         <span class="hidden sm:inline">{discount}% discount</span>
         <span class="sm:hidden">-{discount}%</span>
