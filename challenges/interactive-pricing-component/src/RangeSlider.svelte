@@ -57,6 +57,24 @@
     background-position: center 14px;
     background-repeat: no-repeat;
   }
+  .price-range::-moz-range-thumb {
+    box-shadow: none;
+    border: 0px solid #ffffff;
+    box-shadow: 0px 12px 20px 0px hsl(174deg 86% 61%);
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    background-color: hsl(174, 86%, 45%);
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -4px;
+    background-image: url(../images/icon-slider.svg);
+    background-position: center 14px;
+    background-repeat: no-repeat;
+  }
+  .price-range::-moz-focus-outer {
+    border: 0;
+  }
   .price-range:hover::-webkit-slider-thumb {
     background-color: #25aea4;
   }
