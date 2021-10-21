@@ -1,4 +1,6 @@
 <script>
+  import { tweened } from "svelte/motion";
+  import { cubicOut } from "svelte/easing";
   import Toggle from "./Toggle.svelte";
   import Price from "./Price.svelte";
   import RangeSlider from "./RangeSlider.svelte";
@@ -29,18 +31,22 @@
   const rangeMaxIndex = 4;
   const rangeStep = 1;
   const discount = 25;
+  let price = tweened(0, {
+    duration: 400,
+    easing: cubicOut,
+  });
+
   let payYearly = false;
   let rangeIndex = 2;
 
   $: priceRange = priceRanges[rangeIndex];
-  $: sliderWidth = (rangeIndex / rangeMaxIndex) * 100;
-  $: price = getDiscountedPrice(priceRange.price, payYearly);
+  $: $price = getDiscountedPrice(priceRange.price, payYearly);
 
   function getDiscountedPrice(price, payYearly) {
     if (payYearly) {
-      return Math.floor(price - (price * discount) / 100).toFixed(2);
+      return Math.floor(price - (price * discount) / 100);
     }
-    return price.toFixed(2);
+    return price;
   }
 </script>
 
@@ -50,17 +56,12 @@
       {priceRange.pageViews} Pageviews
     </div>
     <div class="hidden sm:block">
-      <Price {price} />
+      <Price amount={$price} />
     </div>
   </div>
-  <RangeSlider
-    bind:rangeIndex
-    {rangeMaxIndex}
-    {rangeStep}
-    filledWidth={sliderWidth}
-  />
+  <RangeSlider bind:value={rangeIndex} max={rangeMaxIndex} step={rangeStep} />
   <div class="sm:hidden mt-10">
-    <Price {price} />
+    <Price amount={$price} />
   </div>
   <div
     class="flex relative items-center justify-center sm:mt-14 mt-10 sm:text-sm text-xs"

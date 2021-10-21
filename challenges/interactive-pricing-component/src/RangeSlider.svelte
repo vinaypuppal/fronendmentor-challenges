@@ -1,8 +1,8 @@
 <script>
-  export let rangeIndex = 0;
-  export let rangeMaxIndex = 4;
-  export let rangeStep = 1;
-  export let filledWidth = 0;
+  export let value = 0;
+  export let max = 4;
+  export let step = 1;
+  $: filledWidth = (value / max) * 100;
 </script>
 
 <div class="flex justify-center mt-10 relative">
@@ -16,10 +16,10 @@
     id="pricing"
     type="range"
     class="price-range relative z-20"
-    bind:value={rangeIndex}
+    bind:value
     min="0"
-    max={rangeMaxIndex}
-    step={rangeStep}
+    {max}
+    {step}
   />
 </div>
 
